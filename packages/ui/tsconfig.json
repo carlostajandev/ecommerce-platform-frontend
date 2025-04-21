@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "jsx": "preserve", // or "react-jsx" for React 17+
+    "module": "esnext",
+    "target": "esnext",
+    "moduleResolution": "node"
+  }
+}

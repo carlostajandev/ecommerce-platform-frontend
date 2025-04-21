@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./apps/*"
+            ],
+            "@ui/*": [
+                "./packages/ui/src/*"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
