@@ -1,8 +1,8 @@
 {
+  "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
-    "jsx": "preserve", // or "react-jsx" for React 17+
-    "module": "esnext",
-    "target": "esnext",
-    "moduleResolution": "node"
-  }
+    "outDir": "dist"
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
 }

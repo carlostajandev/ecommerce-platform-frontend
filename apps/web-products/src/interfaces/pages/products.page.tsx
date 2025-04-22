@@ -1,7 +1,9 @@
-'use client'
+// src/app/products/page.tsx
+
+'use client';
 
 import { useEffect, useState } from "react";
-import { ProductList } from "../components/ProductList";
+import { ProductList } from "@web-products/interfaces/components/ProductList";
 import { Product } from "@web-products/domain/product.entity";
 import { ProductApiRepository } from "@web-products/infrastructure/product-api.repository";
 import { ListProductsUseCase } from "@web-products/application/list-products.usecase";
@@ -15,12 +17,15 @@ export default function ProductsPage() {
         const useCase = new ListProductsUseCase(repo);
 
         useCase.execute()
-            .then(setProducts)
-            .catch((e) => console.error(e))
+            .then((res) => {
+                console.log("Productos recibidos:", res); // 👈 Debug aquí
+                setProducts(res);
+            })
+            .catch((e) => console.error("Error cargando productos:", e))
             .finally(() => setLoading(false));
     }, []);
 
-    if (loading) return <p>Cargando productos...</p>;
+    if (loading) return <p className="text-blue-500">Cargando productos...</p>;
 
     return (
         <div className="p-6">
